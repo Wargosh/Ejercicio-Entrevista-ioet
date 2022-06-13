@@ -1,0 +1,74 @@
+/*==================== VARIABLES CSS ====================*/
+:root {
+  --color-1: rgba(255, 0, 0, 0.8);
+  --color-2: rgba(72, 255, 0, 0.8);
+  --color-3: rgba(51, 0, 255, 0.8);
+  --color-4: rgba(253, 75, 173, 0.8);
+  --color-5: rgba(0, 0, 0, 0.8);
+  --color-6: rgba(156, 83, 0, 0.8);
+}
+
+html {
+  box-sizing: content-box;
+}
+
+html * {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fff;
+  justify-content: center;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  background-color: #eee;
+  justify-content: center;
+  width: 1200px;
+}
+
+.center {
+  justify-content: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+form{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+td > div {
+  padding: auto;
+  justify-content: center;
+  display: block;
+  row-gap: column;
+}
+
+td,
+th {
+  padding: 4px 5px;
+}
+
+.colors {
+  justify-content: center;
+  display: flex;
+}
+
+.colors .circle {
+  width: 10px;
+  height: 10px;
+  margin-left: 3px;
+  border-radius: 10px;
+}
