@@ -1,3 +1,5 @@
+import { setToHoursAndMinutes } from '../controllers/MainController.js'
+
 const message = document.getElementById('output')
 const tableDOM = document.getElementById('table_employees')
 const tableBody = document.getElementById('table_body')
@@ -15,13 +17,15 @@ export const addNewCell = (label, colors) => {
     return `<td>
                 <div>
                     ${label.length !== 0 && colors ? addColors(colors) : ''}
-                    <p>${label.length !== 2 ? label : [label[0], label[1]].join(' - ')}</p>
+                    <p>${label.length !== 2
+            ? label
+            : [setToHoursAndMinutes(label[0]), setToHoursAndMinutes(label[1])].join(' - ')}</p>
                 </div>
             </td>`
 }
 
 export const showErrorMessage = (msg) => {
-    message.textContent = msg
+    message.textContent += `${msg}\n`
     hideTableEmployees()
 }
 

@@ -1,6 +1,7 @@
 import AllowedDays from '../model/Days.js'
 import Employee from '../model/Employee.js'
 
+const anyDate = '2022-12-12'
 const allowedDays = new AllowedDays()
 // allows the time format to be 24H
 const validHour = /^(2[0-3]|[0-1]?[\d]):[0-5][\d]$/
@@ -43,7 +44,14 @@ export const fillDaysOfEntry = (days) => {
             errors.push('Formato de las horas no es válido.')
             return { result: [], errors: errors }
         }
-        employee.entryDays[acronymDay] = hours
+
+        const { resultHours, error } = checkTheInputAndOutputTimeRange(hours)
+        if (error !== '') {
+            errors.push(error)
+            return { result: [], errors: errors }
+        }
+
+        employee.entryDays[acronymDay] = resultHours
     })
 
     return { result: employee.entryDays, errors: errors }
@@ -53,6 +61,16 @@ export const validateFormatOfTheHour = (hour) => {
     if (validHour.test(hour)) return true
 
     return false
+}
+
+export const checkTheInputAndOutputTimeRange = (hours) => {
+    const timeEntry = new Date(`${anyDate} ${hours[0]}:00`)
+    const timeDeparture = new Date(`${anyDate} ${hours[1]}:00`)
+    if (timeEntry.getTime() >= timeDeparture.getTime()) {
+        return { hours: [], error: 'El rango entre las horas de entrada y salida esta mal especificado.' }
+    }
+
+    return { resultHours: [timeEntry, timeDeparture], error: '' }
 }
 
 export const getPairCombinations = (listEmployees) => {

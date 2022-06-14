@@ -1,15 +1,16 @@
 import Days from '../model/Days.js'
 import Employee from '../model/Employee.js'
 import { getPairCombinations, fillDaysOfEntry } from './Validator.js'
-import { addColors, addNewCell, showErrorMessage, setBodyTable, showTableEmployees } from '../view/ui.js'
-const anyDate = '2022-12-12'
+import { addColors, addNewCell, showErrorMessage, hideErrorMessage, setBodyTable, showTableEmployees } from '../view/ui.js'
+
 let employees = []
 const days = new Days()
 
 const fileInput = document.getElementById('input-file');
 fileInput.onchange = () => {
     const selectedFile = fileInput.files[0];
-    console.log(selectedFile);
+    // console.log(selectedFile);
+    hideErrorMessage()
     readFileText(selectedFile)
 }
 
@@ -30,14 +31,15 @@ async function readFileText(file) {
             if (dataEmployee.length < 2) {
                 showErrorMessage('No se encontro información de los empleados')
                 return 'No se encontro información de los empleados'
-            } else if (dataEmployee[0].trim() === ''){
+            } else if (dataEmployee[0].trim() === '') {
                 showErrorMessage('Existen registros sin un nombre de empleado')
                 return 'Existen registros sin un nombre de empleado'
             }
 
             const { result, errors } = fillDaysOfEntry(dataEmployee[1])
             if (errors.length > 0) {
-                showErrorMessage('Existen errores en el formato de las horas de entrada/salida.')
+                for (const error of errors)
+                    showErrorMessage(error)
                 return 'Existen errores en el formato de las horas de entrada/salida.'
             }
 
@@ -65,19 +67,18 @@ const countMatches = (pair) => {
     const daysMatched = []
     days.getAllowedDays().forEach((day) => {
         if (pair[0].entryDays[day].length > 0 && pair[1].entryDays[day].length > 0) {
-            const dateEntry1 = new Date(`${anyDate} ${pair[0].entryDays[day][0]}:00`)
-            const dateEntry2 = new Date(`${anyDate} ${pair[1].entryDays[day][0]}:00`)
-
+            const dateEntry1 = pair[0].entryDays[day][0]
+            const dateEntry2 = pair[1].entryDays[day][0]
             // if employee 1 entry after of employee 2
             if (dateEntry1.getTime() >= dateEntry2.getTime()) {
-                const dateDeparture2 = new Date(`${anyDate} ${pair[1].entryDays[day][1]}:00`)
+                const dateDeparture2 = pair[1].entryDays[day][1]
                 // verify that the exit of employee 2 is more than employee 1 entry
                 if (dateEntry1.getTime() < dateDeparture2.getTime())
                     daysMatched.push(day)
             }
             // if employee 1 entry before of employee 2
             else if (dateEntry1.getTime() <= dateEntry2.getTime()) {
-                const dateDeparture1 = new Date(`${anyDate} ${pair[0].entryDays[day][1]}:00`)
+                const dateDeparture1 = pair[0].entryDays[day][1]
                 // verify that the exit of employee 1 is more than employee 2 entry
                 if (dateDeparture1.getTime() > dateEntry2.getTime())
                     daysMatched.push(day)
@@ -102,3 +103,9 @@ const LoadDataOnTable = () => {
     })
     setBodyTable(tableBody)
 }
+
+export const setToHoursAndMinutes = (date) => {
+    return setTo2Digits(date.getHours()) + ':' + setTo2Digits(date.getMinutes());
+}
+
+const setTo2Digits = (num) => { return String(num).padStart(2, '0') }
