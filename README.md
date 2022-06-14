@@ -14,7 +14,7 @@
 This project has been made in JavaScript language and making a small use of HTML for reading files through the input file element.
 
 
-## Instalación 🛠️
+## Installation 🛠️
 
 For a correct installation it is recommended to download all the content of this repository. Once downloaded and unzipped you can open the project folder in your favorite code editor or IDE and located in the project path open a terminal and run the following command:
 
@@ -26,6 +26,6 @@ This will download all the development dependencies needed to correctly run the 
 
 
 
-## Autor ✒️
+## Author ✒️
 
 * **Erick Jara** - [Wargosh](https://github.com/Wargosh)
