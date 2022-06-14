@@ -47,6 +47,21 @@ JUAN=MO10:30-11:00,WE12:00-15:00,FR14:00-20:00,SA15:30-19:00,SU15:00-20:00
 ANA=MO07:30-11:00,WE07:00-11:00,FR18:00-22:00,SA15:30-19:00,SU16:10-20:00
 ```
 
+When you load the file with the correct format you will see something like this:
+
+<p align="center">
+  <img src="https://github.com/Wargosh/Ejercicio-Entrevista-ioet/blob/main/img_readme/cap-file-02.PNG" alt="Table with employee data"/>
+</p>
+
+If you want to view the result of matches between employees, open the browser terminal.
+
+*In the case of the example file you will see the following result:*
+<p align="center">
+  <img src="https://github.com/Wargosh/Ejercicio-Entrevista-ioet/blob/main/img_readme/cap-test-01.PNG" alt="Result in the web console"/>
+</p>
+
+This way you can check the number of matches between pairs that exist within the same time period on the same day. That in addition to returning the number of matches you can also check the array that returns with the acronym of each day in which they were crossed to be able to check it manually in a faster way.
+
 ## Running the test 🔍
 
 For the correct execution of the tests please review the installation section and with an open terminal located in the exercise folder execute the following command:
