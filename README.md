@@ -6,10 +6,10 @@ The description of the exercise can be found [HERE](https://github.com/Wargosh/E
 
 
 ## Table of Contents
-1. [General Information](#general-information-)
-2. [Installation](#installation-%EF%B8%8F)
-3. [Resolution of the exercise](#resolution-of-the-exercise-)
-4. [Running the test](#running-the-test-)
+1. [General Information 📋](#general-information-)
+2. [Installation 🛠️](#installation-%EF%B8%8F)
+3. [Resolution of the exercise 🔨](#resolution-of-the-exercise-)
+4. [Running the test 🔍](#running-the-test-)
 
 
 ## General Information 📋
