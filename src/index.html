@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio</title>
 
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
     <div class="container">
         <div class="center">
             <form action="">
-                <input type="file" onchange="loadFile(this.files[0])">
+                <input type="file" id="input-file">
                 <br>
                 <pre id="output"></pre>
             </form>
@@ -40,11 +40,12 @@
     </div>
 
 
-    <script type="text/javascript" src="./assets/js/model/Days.js"></script>
-    <script type="text/javascript" src="./assets/js/model/Employee.js"></script>
-    <script type="text/javascript" src="./assets/js/view/ui.js"></script>
-    <script type="text/javascript" src="./assets/js/controllers/validator.js"></script>
-    <script type="text/javascript" src="./assets/js/controllers/MainController.js"></script>
+    <!-- <script src="./src/js/model/Days.js"></script>
+    <script src="./src/js/model/Employee.js"></script>
+    <script src="./src/js/view/ui.js"></script>
+    <script src="./src/js/controllers/validator.js"></script> -->
+    <script type="module" src="./js/controllers/MainController.js"></script>
+    <!-- <script type="module" src="./src/js/controllers/testValidator.js"></script> -->
 </body>
 
 </html>

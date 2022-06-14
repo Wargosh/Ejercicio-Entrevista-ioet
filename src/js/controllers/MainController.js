@@ -1,8 +1,19 @@
+import Days from '../model/Days.js'
+import Employee from '../model/Employee.js'
+import { getPairCombinations, fillDaysOfEntry } from './Validator.js'
+import { addColors, addNewCell, showErrorMessage, setBodyTable, showTableEmployees } from '../view/ui.js'
 const anyDate = '2022-12-12'
 let employees = []
 const days = new Days()
 
-async function loadFile(file) {
+const fileInput = document.getElementById('input-file');
+fileInput.onchange = () => {
+    const selectedFile = fileInput.files[0];
+    console.log(selectedFile);
+    readFileText(selectedFile)
+}
+
+async function readFileText(file) {
     employees = []
     var reader = new FileReader(file);
     reader.onload = function (props) {

@@ -2,7 +2,7 @@ const message = document.getElementById('output')
 const tableDOM = document.getElementById('table_employees')
 const tableBody = document.getElementById('table_body')
 
-const addColors = (colors) => {
+export const addColors = (colors) => {
     return `<div class="colors">
                 ${colors.map(
         (color) =>
@@ -11,7 +11,7 @@ const addColors = (colors) => {
             </div>`
 }
 
-const addNewCell = (label, colors) => {
+export const addNewCell = (label, colors) => {
     return `<td>
                 <div>
                     ${label.length !== 0 && colors ? addColors(colors) : ''}
@@ -20,25 +20,25 @@ const addNewCell = (label, colors) => {
             </td>`
 }
 
-const showErrorMessage = (msg) => {
+export const showErrorMessage = (msg) => {
     message.textContent = msg
     hideTableEmployees()
 }
 
-const hideErrorMessage = () => {
+export const hideErrorMessage = () => {
     message.textContent = ''
 }
 hideErrorMessage()
 
-const setBodyTable = (content) => {
+export const setBodyTable = (content) => {
     tableBody.innerHTML = content
 }
 
-const showTableEmployees = () => {
+export const showTableEmployees = () => {
     tableDOM.hidden = false
 }
 
-const hideTableEmployees = () => {
+export const hideTableEmployees = () => {
     tableDOM.hidden = true
 }
 // initialized for default

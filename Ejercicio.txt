@@ -1,6 +1,4 @@
-Hola Erick,
-
-Estamos felices de que estés interesado en ser parte de ioet. Como parte del proceso de reclutamiento, nos gustaría que resolviera un ejercicio de programación para evaluar sus habilidades y luego programaremos una reunión para discutir su solución. Es importante tener en cuenta que puede usar cualquier lenguaje de programación que desee, pero no puede usar ninguna biblioteca externa para resolver el ejercicio, sin embargo, puede agregar cualquier dependencia para fines de prueba como JUnit, Mockito, etc.
+Es importante tener en cuenta que puede usar cualquier lenguaje de programación que desee, pero no puede usar ninguna biblioteca externa para resolver el ejercicio, sin embargo, puede agregar cualquier dependencia para fines de prueba como JUnit, Mockito, etc.
 
 Ejercicio
 

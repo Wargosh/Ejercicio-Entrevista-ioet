@@ -1,4 +1,4 @@
-class Employee {
+export default class Employee {
     constructor() {
         this.id = null
         this.name = ''
