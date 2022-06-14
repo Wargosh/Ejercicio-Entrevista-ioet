@@ -1,5 +1,8 @@
-# Ejercicio ioet
- This is a repository for a technical interview applying javascript knowledge.
+# Exercise to apply to ioet
+
+This is a repository for a technical interview applying javascript knowledge.
+ 
+The description of the exercise can be found [HERE](https://github.com/Wargosh/Ejercicio-Entrevista-ioet/blob/main/EXERCISE.md), in summary it consists of reading a text file containing information of some employees and their respective entry and exit times, the logic is to determine through a program the number of times that two employees have been during the same period of time on the same day.
 
 <!--
 ## Table of Contents
@@ -56,6 +59,7 @@ When you load the file with the correct format you will see something like this:
 If you want to view the result of matches between employees, open the browser terminal.
 
 *In the case of the example file you will see the following result:*
+
 <p align="center">
   <img src="https://github.com/Wargosh/Ejercicio-Entrevista-ioet/blob/main/img_readme/cap-test-01.PNG" alt="Result in the web console"/>
 </p>
@@ -71,6 +75,12 @@ npm run test
 ```
 
 This will run all the sub-extension .spec or .test files that the command finds, for the case of this exercise all the tests were placed in a file located in the path [src/tests](https://github.com/Wargosh/Ejercicio-Entrevista-ioet/tree/main/src/test) with the file name Validator.test.js.
+
+Then when you run the command you will see something like the image below, I tried to consider all the cases where you could send misspelled parameters.
+
+<p align="center">
+  <img src="https://github.com/Wargosh/Ejercicio-Entrevista-ioet/blob/main/img_readme/cap-test-02.PNG" alt="Running tests with Jest"/>
+</p>
 
 ## Author ✒️
 
