@@ -4,13 +4,13 @@ This is a repository for a technical interview applying javascript knowledge.
  
 The description of the exercise can be found [HERE](https://github.com/Wargosh/Ejercicio-Entrevista-ioet/blob/main/EXERCISE.md), in summary it consists of reading a text file containing information of some employees and their respective entry and exit times, the logic is to determine through a program the number of times that two employees have been during the same period of time on the same day.
 
-<!--
+
 ## Table of Contents
-1. [Información General](#información-general)
-2. [Tecnologías](#tecnologías)
-3. [Instalación](#instalación)
-4. [Colaboradores](#colaboradores)
--->
+1. [General Information](#general-information-)
+2. [Installation](#installation-%EF%B8%8F)
+3. [Resolution of the exercise](#resolution-of-the-exercise-)
+4. [Running the test](#running-the-test-)
+
 
 ## General Information 📋
 
@@ -20,7 +20,7 @@ For this project we used the MVC architecture pattern which works in 3 different
 
 ## Installation 🛠️
 
-For a correct installation it is recommended to download all the content of this repository. Once downloaded and unzipped you can open the project folder in your favorite code editor or IDE and located in the project path open a terminal and run the following command:
+For a correct installation it is recommended to download all the contents of this repository (except the /img_readme folder, its only purpose is to illustrate a little better the README, so you can safely delete it). Once downloaded and unzipped you can open the project folder in your favorite code editor or IDE and located in the project path open a terminal and run the following command:
 
 ```bash
 npm install
