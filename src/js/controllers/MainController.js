@@ -30,6 +30,9 @@ async function readFileText(file) {
             if (dataEmployee.length < 2) {
                 showErrorMessage('No se encontro información de los empleados')
                 return 'No se encontro información de los empleados'
+            } else if (dataEmployee[0].trim() === ''){
+                showErrorMessage('Existen registros sin un nombre de empleado')
+                return 'Existen registros sin un nombre de empleado'
             }
 
             const { result, errors } = fillDaysOfEntry(dataEmployee[1])
