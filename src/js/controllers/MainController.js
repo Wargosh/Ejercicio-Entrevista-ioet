@@ -8,10 +8,14 @@ const days = new Days()
 
 const fileInput = document.getElementById('input-file');
 fileInput.onchange = () => {
-    const selectedFile = fileInput.files[0];
-    // console.log(selectedFile);
-    hideErrorMessage()
-    readFileText(selectedFile)
+    if (fileInput.value.endsWith('.txt') || fileInput.value.endsWith('.csv')) {
+        const selectedFile = fileInput.files[0];
+        hideErrorMessage()
+        readFileText(selectedFile)
+    } else {
+        showErrorMessage('Formato del archivo debe ser .txt o .csv')
+        return;
+    }
 }
 
 async function readFileText(file) {
@@ -21,7 +25,7 @@ async function readFileText(file) {
         const rows = this.result.split(/\r\n|\n/);
         if (rows.length < 2 && !rows[0]) {
             showErrorMessage('No existe información en el archivo')
-            return 'No existe información en el archivo'
+            return;
         }
 
         for (let line = 0; line < rows.length; line++) {
@@ -30,17 +34,17 @@ async function readFileText(file) {
             const dataEmployee = rows[line].split('=')
             if (dataEmployee.length < 2) {
                 showErrorMessage('No se encontro información de los empleados')
-                return 'No se encontro información de los empleados'
+                return;
             } else if (dataEmployee[0].trim() === '') {
                 showErrorMessage('Existen registros sin un nombre de empleado')
-                return 'Existen registros sin un nombre de empleado'
+                return;
             }
 
             const { result, errors } = fillDaysOfEntry(dataEmployee[1])
             if (errors.length > 0) {
                 for (const error of errors)
                     showErrorMessage(error)
-                return 'Existen errores en el formato de las horas de entrada/salida.'
+                return;
             }
 
             const employee = new Employee()
