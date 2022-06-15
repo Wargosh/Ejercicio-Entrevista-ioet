@@ -18,7 +18,7 @@ This project was developed in JavaScript language and using HTML to read files u
 
 For this project we used the MVC architecture pattern which works in 3 different layers that allow to separate the application logic, the user interface management and the models or objects that could be useful.
 
-You can directly try the exercise in the following [URL](https://wargosh.github.io/Ejercicio-Entrevista-ioet/src/), however I recommend you to pay attention to the [Exercise resolution section](#resolution-of-the-exercise-) section to understand how the exercise was solved and the format that was accepted for the exercise.
+You can directly try the exercise in the following [URL](https://wargosh.github.io/Ejercicio-Entrevista-ioet/), however I recommend you to pay attention to the [Exercise resolution section](#resolution-of-the-exercise-) section to understand how the exercise was solved and the format that was accepted for the exercise.
 
 ## Installation 🛠️
 
